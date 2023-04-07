@@ -2,6 +2,8 @@ public class Tester {
         public static void main(String[] args) {
 
                 //////////////////////// City /////////////////////////////
+                String s = "abd";
+                System.out.println(s.charAt(1)-'a');
 
                 City c1 = new City("Eilat", 29, 2, 4444, 6, -6, -7, 8, -600, -10);
                 City c2 = new City("Gedera", 8, 9, 1984, 20, 40, 50, 60, 300, 50);
@@ -36,21 +38,22 @@ public class Tester {
                 System.out.print("c1 moveCentralStation: " + c1.getCentralStation());
                 c1.moveCentralStation(-1, -9);
                 System.out.print(" -> " + c1.getCentralStation());
-                
-                c1.setCentralStation(new Point(0,6));
+
+                c1.setCentralStation(new Point(0, 6));
                 System.out.print("\n c1 distanceBetweenCenterAndStation: " + c1.distanceBetweenCenterAndStation());
-                
+
                 City c3 = c1.newCity("c3", 1, 2);
                 System.out.print("\n c1.newCity = c3: " + c3);
-                
+
                 c2 = new City("c2", 31, 12, 2021, 2, 3, 4, 5, 30, 50);
-                City c4 = c2.newCity("c4", -3, 0);
-                
-                System.out.println("c1 EstablishedBtwn " + c1.cityEstablishedBetweenDates( new Date(1,1,2000), new Date(1,1,2900)));
-                
+                // City c4 = c2.newCity("c4", -3, 0);
+
+                System.out.println("c1 EstablishedBtwn "
+                                + c1.cityEstablishedBetweenDates(new Date(1, 1, 2000), new Date(1, 1, 2900)));
+
                 System.out.println("c1 c2 establishmentDateDiff " + c1.establishmentDateDiff(c2));
                 System.out.println("c1 c3 establishmentDateDiff " + c1.establishmentDateDiff(c3));
-                
+
                 /*
                  * //////////////////////// Date /////////////////////////////
                  * 
