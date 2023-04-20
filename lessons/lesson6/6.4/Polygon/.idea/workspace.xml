@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="39a3f8ee-087c-4f2c-829e-493b38fd1a05" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../lesson4/Acounts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson4/Box.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson4/Calculate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson4/CarStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson4/StaticTry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson4/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson4/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.0/Tar0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.0/Tar0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.0/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.0/Tester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../mamans/12/mmn 12 2023b.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../mamans/12/mmn 12 2023b.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../mamans/12/version0/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../mamans/12/version0/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../mamans/12/version0/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../mamans/12/version0/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../mamans/12/version0/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../mamans/12/version0/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../mamans/12/version0/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../mamans/12/version0/Tester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../notes.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../notes.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../~$notes.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../~$notes.docx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2OMvPE2A9ptPqvoxrP7bQSCcDaq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39a3f8ee-087c-4f2c-829e-493b38fd1a05" name="Changes" comment="" />
+      <created>1681383239987</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681383239987</updated>
+      <workItem from="1681383243901" duration="491000" />
+      <workItem from="1681383832802" duration="97000" />
+    </task>
+    <servers />
+  </component>
+</project>
