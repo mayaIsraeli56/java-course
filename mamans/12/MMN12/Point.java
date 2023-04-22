@@ -8,7 +8,7 @@
 public class Point {
 
     // constants declaration:
-    public static final int MIN_VALUE = 0; // The minimum value of x y coordinates
+    private static final int MIN_VALUE = 0; // The minimum value of x y coordinates
 
     // attributes declarations:
     private int _x; // x coordinate

@@ -172,10 +172,11 @@ public class Date {
 
         // constants declaration:
         final int MIN_2_DIGIT_NUM = 10;
-        final String prefix = "0";
+        final String PREFIX = "0";
+        final String NO_PREFIX = "";
 
-        String day = _day < MIN_2_DIGIT_NUM ? prefix + _day : Integer.toString(_day);
-        String month = _month < MIN_2_DIGIT_NUM ? prefix + _month : Integer.toString(_month);
+        String day = _day < MIN_2_DIGIT_NUM ? PREFIX + _day : NO_PREFIX + _day;
+        String month = _month < MIN_2_DIGIT_NUM ? PREFIX + _month : NO_PREFIX + _month;
 
         return day + "/" + month + "/" + _year;
     }
