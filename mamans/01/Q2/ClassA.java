@@ -1,3 +1,4 @@
+package Q2;
 public class ClassA {
 
     public ClassA(){ 
