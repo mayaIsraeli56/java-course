@@ -22,8 +22,19 @@ public class Tester {
         B b3 = new B(2,10);
         System.out.println(b3.equals(b1));
 
-        Object obj = new B(2,10);
+        B obj = new B(2,10);
         System.out.println(b3.equals(b1));
 
+        A a1 = new B(2,10);
+
+        Object obj2 = new Object();
+        System.out.println(b3.equals(obj2));
+
+        System.out.println();
+        System.out.println(a1.equals(b2));
+        System.out.println(b3.equals(b1));
+        System.out.println(c1.equals(c2));
+        System.out.println(b3.equals(obj));
+        System.out.println(obj.equals(a1));
     }
 }

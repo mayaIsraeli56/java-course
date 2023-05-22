@@ -1,5 +1,6 @@
 public class Teaster {
     public static void main(String[] args) {
+        
         C c = new C();
         c.f();
         c.f1(2);

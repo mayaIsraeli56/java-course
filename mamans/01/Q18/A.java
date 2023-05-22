@@ -19,3 +19,4 @@ public abstract class A {
 
   public abstract boolean foo(int n);
 }
+
