@@ -14,6 +14,11 @@ public class Tester {
 
     //3
     int[] a2 = {1,3,2,3,10,10,3,2,4};
-    System.out.println(Ex13.longestPalindrome(a2));
+    int[] a3 = {1,2,2,1};
+    System.out.println(Ex13.longestPalindrome(a3));
+
+    //4
+    int[] a4 = {5,4,2,1,3};
+    System.out.println(Ex13.isSum(a4,17));
   }
 }
