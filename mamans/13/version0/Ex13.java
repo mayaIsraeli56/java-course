@@ -91,10 +91,14 @@ public class Ex13 {
     int diff = (arr[hi] - arr[lo]) / len; // the common difference of successive members
     int mid, a1 = arr[0];
 
-    // Finds the serial number of the missing value i by reducing the options by half in each iteration
+    /* Finds the serial number of the missing value i by reducing the options by half in each iteration (similarly to binary search).
+     * In each iteration, it finds the middle of the "search area",
+     * determines in which half of the "search area" the missing value is.
+     * updates lo and hi accordingly, so in the next iterations, search field is reduced by half .
+     */
     while (lo <= hi) {
-      mid = (lo + hi) / 2;
-      if (arr[mid] == a1 + mid * diff) {
+      mid = (lo + hi) / 2; 
+      if (arr[mid] == a1 + mid * diff) { 
         lo = mid + 1;
       } else {
         hi = mid - 1;
