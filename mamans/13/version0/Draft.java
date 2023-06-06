@@ -11,31 +11,45 @@ public class Draft {
   }
 
   private static int longestPalindrome1(int[] arr, int left, int right) {
-    final int MIN_LENGTH = 1;
-    final int LAST_IDX = arr.length - 1;
+    int lastIdx = arr.length - 1; // last index in the array
 
-    if (left == LAST_IDX) {
-      return MIN_LENGTH;
+    // base case - all sequences with a length greater than 1 have been checked and
+    // are not palindromes
+    if (left == right) {
+      return 1;
     }
 
-    int opt1 = (isPalindrom(arr, left, right)) ? right - left + 1 : MIN_LENGTH;
+    // if the current sequences is a palindrom, it is the longest one in the array
+    if ( isPalindrom(arr, left, right)) {
+      return right - left + 1; // palindrom length
+    }
 
-    int opt2 = (right > left + 1)
-      ? longestPalindrome1(arr, left, right - 1)
-      : longestPalindrome1(arr, left + 1, LAST_IDX);
-
-    return Math.max(opt1, opt2);
+    /*
+     * A recursive call to the function, sending the indexes of the next sequence.
+     * If there is another sequence of the same length that has not yet been checked
+     * - sends it.
+     * Otherwise, sends a sequence that is shorter by one.
+     * For each length, the position of "left" starts at the beginning of the array,
+     * and the indexes increasing as long as right is not out of bound.
+     */
+    return (right != lastIdx)
+      ? longestPalindrome(arr, left + 1, right + 1)
+      : longestPalindrome(arr, 0, right - left - 1);
   }
 
+  // A boolean method that returns true if the given array is a palindrome
+  // between the given indexes
   private static boolean isPalindrom(int[] a, int left, int right) {
     count1++;
     if (left >= right) { // all cells has been checked and did not returned false - it is a palindrom
       return true;
     }
 
-    if (a[left] != a[right]) { //
+    if (a[left] != a[right]) { // checks if the numbers in the edges are equal
       return false;
     }
+
+    // checks the rest of the sequence without the edges
     return isPalindrom(a, left + 1, right - 1);
   }
 
