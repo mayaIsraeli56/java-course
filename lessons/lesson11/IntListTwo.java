@@ -1,5 +1,3 @@
-import java.lang.foreign.VaList;
-
 public class IntListTwo {
 
   private IntNodeTwo _head, _tail;

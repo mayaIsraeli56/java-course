@@ -1,12 +1,14 @@
+import java.util.Scanner;
+
 public class Tester {
 
   public static void main(String[] args) {
-    // IntNode v1 = new IntNode(1);
-    // IntList list = new IntList(v1);
+    IntNode v1 = new IntNode(1);
+    IntList list = new IntList(v1);
 
-    // list.addToEnd(new IntNode(2));
-    // list.addToEnd(new IntNode(3));
-    // list.addToEnd(new IntNode(4));
+    list.addToEnd(new IntNode(2));
+    list.addToEnd(new IntNode(3));
+    list.addToEnd(new IntNode(4));
 
     // IntNode v2 =  new IntNode(2);
     // IntNode v3 = v1;
@@ -40,5 +42,38 @@ public class Tester {
     System.out.println(list2);
 
     System.out.println(IntListTwo.findElementInList(99, t1));
+
+    // int temp = 0;
+    // Scanner scan = new Scanner(System.in);
+    // IntList list = new IntList();
+
+    // System.out.println("Give me the next num");
+    // temp = scan.nextInt();
+
+    // while (temp != -1) {
+    //   list.addToEnd(new IntNode(temp));
+    //   System.out.println("Give me the next num");
+    //   temp = scan.nextInt();
+    // }
+    // System.out.println("list: " +  list.toString());
+
+// IntNode curr = new IntNode(0);
+//     System.out.println("Give me the next num");
+//     temp = scan.nextInt();
+
+//     while (temp != -1) {
+//       curr.setNext(new IntNode(temp));
+//       curr = curr.getNext();
+//       System.out.println("Give me the next num");
+//       temp = scan.nextInt();
+//     }
+// scan.close();
+    System.out.println("list: " +  list.toString());
+    list.recursiveReverse();
+    System.out.println("list reverse: " +  list.toString());
+    System.out.println("is There: " +  list.isThere(3));
+    list.recursiveReverse();
+    list.addInOrder(9);
+    System.out.println("list: " +  list.toString());
   }
 }
