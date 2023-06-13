@@ -1,5 +1,6 @@
 /**
  * Ex14.java - complexity and recursion problems.
+ * id: 209956333
  *
  * @author Maya Israeli
  * @version 25.5.2023
@@ -11,6 +12,7 @@ public class Ex13 {
   private static final int RESET = 0; // reset variable
 
   private static final int STEP = 1; // The basic number for changing variables
+  private static final int SHORTEST_PALINDROME = 1; // The length of the shortest palindrome
 
   private static final int AVE_FACTORS = 2; // factors in the average
   private static final int MAX_IN_A_ROW = 2; // max adjacent cells that can be subtracted
@@ -27,9 +29,9 @@ public class Ex13 {
    * The driver can start on road 1 or road 2, and can cross a road at most once.
    *
    * Time Complexity: O(n) -
-   * iterating once over road1 and road2 (at the same time) to sum up their
-   * elements
-   * iterating over the arrays once to find the optimal exchange point
+   * Tterating once over road1 and road2 (at the same time) to sum up their
+   * elements.
+   * Iterating over the arrays once to find the optimal exchange point.
    * Total of 2 itetations, no nested loops. O(n + n) = O(n).
    *
    * Space Complexity: O(1) - constant number of variables.
@@ -57,9 +59,9 @@ public class Ex13 {
 
     /*
      * For each road interchange point (switchPoint) it calculates:
-     * 1. driving duration in a path that starts at road 1 and switch at
+     * 1. Driving duration in a path that starts at road 1 and switch at
      * switchPoint to road 2
-     * 2. driving duration in a path that starts at road 2 and switch at switchPoint
+     * 2. Driving duration in a path that starts at road 2 and switch at switchPoint
      * to road 1
      * It finds the min between the two and the overall minimum.
      */
@@ -110,11 +112,11 @@ public class Ex13 {
    */
   public static int missingValue(int[] arr) {
     int len = arr.length;
-    int lo = RESET, hi = len - STEP; // The indexes that limit the search area
+    int lo = RESET, hi = len - 1; // The indexes that limit the search area
     int diff = (arr[hi] - arr[lo]) / len; // the common difference of successive members
     int mid, a1 = arr[lo];
 
-    while (lo < hi - 1) {
+    while (lo < hi - 1) { // lo and hi are not adjacent
       mid = (lo + hi) / AVE_FACTORS; //  finds the middle
       if (arr[mid] == a1 + mid * diff) { // is it the right value according to the formula?
         lo = mid; //  move to the second half
@@ -149,12 +151,14 @@ public class Ex13 {
     // base case - all sequences with a length greater than 1 have been checked and
     // are not palindromes
     if (left == right) {
-      return 1; // the length of the shortest palindrome
+      return SHORTEST_PALINDROME; // the length of the shortest palindrome
     }
 
     // if the current sequences is a palindrom, it is the longest one in the array
-    if (arr[left] == arr[right] && isPalindrom(arr, left + 1, right - 1)) {
-      return right - left + STEP; // palindrom length
+    if (
+      arr[left] == arr[right] && isPalindrom(arr, left + STEP, right - STEP)
+    ) {
+      return right - left + 1; // palindrom length
     }
 
     /*

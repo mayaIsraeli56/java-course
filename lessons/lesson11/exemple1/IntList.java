@@ -257,11 +257,11 @@ public class IntList {
     }
   }
 
-  public IntNode addInOrderRec(int num) {
+  public boolean addInOrderRec(int num) {
     return addInOrderRec(_head, num);
   }
 
-  private IntNode addInOrderRec(IntNode p, int num) {
+  private IntNode addInOrderRec2(IntNode p, int num) {
     if (p == null)
       return new IntNode(num);
     if (p.getValue() > num)
