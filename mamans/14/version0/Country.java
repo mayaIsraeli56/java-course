@@ -1,47 +1,90 @@
+/**
+ * Country.java - Represents a country.
+ * City is represented by its name, and by the head of a linked list that contains the cities in this country.
+ * Id : 209956333
+ *
+ * @author Maya Israeli
+ * @version 05.06.2023
+ */
+
 public class Country {
 
+  // constants declaration:
+  private static final int MIN_DISTANCE = 0;
+
+  // attributes declarations:
   CityNode _head;
   private String _name;
 
-  private final int MIN_DISTANCE = 0;
+  // Constructors
 
-  public Country(String name) {
+  /**
+   * Constructor of a Country.
+   * Constructs a new country with a given name.
+   * Sets the city's linked list to null.
+   * @param countryName The name of the new country.
+   */
+  public Country(String countryName) {
     _head = null;
-    _name = name;
+    _name = countryName;
   }
 
+  /**
+   * A boolean method that adds a city to the country's linked list of cities.
+   * It accepts as parameters its name, its establishment date, x and y coordinates of city center,
+   * x and y coordinates of central station, the number of residents,
+   * and the number of neighborhoods in the city.
+   * The new city will be added while keeping it arranged by establishment date.
+   * At the top of the list the oldest, at the end the youngest.
+   * If the the dates are the same,
+   * the city closer to the top is the one whose name appears in the dictionary first.
+   *
+   * @param name  The city's name.
+   * @param day  The day the city was established.
+   * @param month The month the city was established.
+   * @param year The year the city was established.
+   * @param xCenter The x coordinate of the city's center.
+   * @param yCenter The y coordinate of the city's center.
+   * @param xStation The x coordinate of the city's central station.
+   * @param yStation The y coordinate of the city's central station.
+   * @param numOfResidents number of residents.
+   * @param noOfNeighborhoods number of neighborhoods.
+   * @return true if the city was successfully added,
+   *          false if the city was already on the list and was not added this time.
+   */
   public boolean addCity(
-    String cityName,
-    int dayEstablished,
-    int monthEstablished,
-    int yearEstablished,
-    int centerX,
-    int centerY,
-    int stationX,
-    int stationY,
+    String name,
+    int day,
+    int month,
+    int year,
+    int xCenter,
+    int yCenter,
+    int xStation,
+    int yStation,
     long numOfResidents,
     int noOfNeighborhoods
   ) {
-    City newCity = new City(
-      cityName,
-      dayEstablished,
-      monthEstablished,
-      yearEstablished,
-      centerX,
-      centerY,
-      stationX,
-      stationY,
-      numOfResidents,
-      noOfNeighborhoods
+    CityNode newCity = new CityNode(
+      new City(
+        name,
+        day,
+        month,
+        year,
+        xCenter,
+        yCenter,
+        xStation,
+        yStation,
+        numOfResidents,
+        noOfNeighborhoods
+      )
     );
 
-    if (isEmpty()) {
-      _head = new CityNode(newCity);
+    if (isEmpty()) { // this is the first city added to the country
+      _head = newCity;
       return true;
     }
 
-    Date newCityDate = newCity.getDateEstablished();
-    String newCityName = newCity.getCityName();
+    Date newCityDate = newCity.getCity().getDateEstablished();
 
     CityNode ptr = _head;
     CityNode next = _head;
@@ -50,7 +93,7 @@ public class Country {
       next != null &&
       isAfter(
         newCityDate,
-        newCityName,
+        name,
         next.getCity().getDateEstablished(),
         next.getCity().getCityName()
       )
@@ -59,24 +102,22 @@ public class Country {
       next = next.getNext();
     }
 
-    if (newCity.equals(ptr.getCity())) {
+    if (newCity.getCity().equals(ptr.getCity())) {
       return false;
     }
 
+    newCity.setNext(next);
+
     if (next == _head) { // points at the same object
-      _head = new CityNode(newCity, next);
+      _head = newCity;
       return true;
     }
 
-    ptr.setNext(new CityNode(newCity, next));
+    ptr.setNext(newCity);
     return true;
   }
 
   public long getNumOfResidents() {
-    // if (isEmpty()) {
-    //   return 0;
-    // }
-
     long count = 0;
     CityNode node = _head;
 
@@ -224,7 +265,7 @@ public class Country {
 
     city1.setCityCenter(city1.getCityCenter().middle(city2.getCityCenter()));
 
-    // if c2 (the younger) has the same or a smaller x value 
+    // if c2 (the younger) has the same or a smaller x value
     if (!city2.getCentralStation().isRight(city1.getCentralStation())) {
       city1.setCentralStation(new Point(city2.getCentralStation()));
     }
@@ -291,7 +332,7 @@ public class Country {
     return (
       newCityDate.after(nextCityDate) ||
       newCityDate.equals(nextCityDate) &&
-      newCityName.compareTo(nextCityName) > 0
+      newCityName.compareTo(nextCityName) >= 0
     );
   }
 

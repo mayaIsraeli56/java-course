@@ -1,6 +1,7 @@
 /**
  * CityNode.java - Represents a single node with a city object.
- * Author: Maya Israeli 209956333
+ * Id : 209956333
+ * Author: Maya Israeli 
  * Date: 05/06/2023
  */
 
@@ -41,8 +42,8 @@ public class CityNode {
   }
 
   /**
-   * Returns a copy of city object of the node.
-   * @return  a copy of city object of the node.
+   * Returns a copy of the city object of the node.
+   * @return  a copy of the city object of the node.
    */
   public City getCity() {
     return new City(_city);
