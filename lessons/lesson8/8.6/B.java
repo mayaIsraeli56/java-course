@@ -1,7 +1,12 @@
-public class B extends A{
-    public B() {}
+public class B extends A {
 
-    public void printMe() {
-        System.out.println("B");
-    }
+  private int _b;
+
+  public B() {
+    _b = 2;
+  }
+
+  public void printMe() {
+    System.out.println("B " + _b +" " + super.getA());
+  }
 }

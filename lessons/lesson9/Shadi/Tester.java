@@ -21,6 +21,6 @@ public class Tester {
 
     // volume
     int[] c = {2,1,1,4,1,1,2,3,2};
-    System.out.println(WaterVolume.waterVolume(c));
+    System.out.println(WaterVolume.waterVolume(new int[2]));
   }
 }

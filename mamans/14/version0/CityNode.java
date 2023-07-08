@@ -1,8 +1,10 @@
 /**
  * CityNode.java - Represents a single node with a city object.
+ * Each node holds a city object and the following  node (to create a linked-list).
  * Id : 209956333
- * Author: Maya Israeli 
- * Date: 05/06/2023
+ *
+ * @author Maya Israeli
+ * @version 05.06.2023
  */
 
 public class CityNode {
@@ -11,8 +13,10 @@ public class CityNode {
   private City _city;
   private CityNode _next;
 
+  // Constructors
+
   /**
-   * Constructs a node with a given city.
+   * Constructs a node with a given city, next node is set to null.
    * @param c The city to initialize the node with.
    */
   public CityNode(City c) {
@@ -21,9 +25,9 @@ public class CityNode {
   }
 
   /**
-   * Constructs a node with a given city and sets its next to a given node.
+   * Constructs a node with a given city and sets its next node to a given one.
    * @param c The city to initialize the node with.
-   * @param next The next node to point.
+   * @param next The next node to point at.
    */
   public CityNode(City c, CityNode next) {
     _city = new City(c);
@@ -32,14 +36,15 @@ public class CityNode {
 
   /**
    * Copy constructor for CityNode.
-   * Construct a new CityNode with the same attributes as another CityNode.
+   * Constructs a new CityNode with the same attributes as another CityNode.
    *
    * @param c The CityNode object from which to construct the new CityNode.
    */
   public CityNode(CityNode c) {
-    _city = new City(c._city);
-    _next = c._next;
+    this(c._city, c._next);
   }
+
+  // methods
 
   /**
    * Returns a copy of the city object of the node.
@@ -72,4 +77,4 @@ public class CityNode {
   public void setNext(CityNode next) {
     _next = next;
   }
-}
+} // end of class

@@ -83,33 +83,46 @@ public class Tar1 {
     return count;
   }
 
-//   public static void moveHalf(Queue q) {
-//     Queue temp = new Queue();
-//     int i = 0;
-//     int size = size(q);
-    
-//     while (!q.isEmpty() && i < size / 2) {
-//       int x = q.dequeue();
-//       temp.enqueue(x);
-//       i++;
-//     }
+  //   public static void moveHalf(Queue q) {
+  //     Queue temp = new Queue();
+  //     int i = 0;
+  //     int size = size(q);
 
-//     while (!temp.isEmpty()) {
-//       q.enqueue(temp.dequeue());
-//     }
-//   }
+  //     while (!q.isEmpty() && i < size / 2) {
+  //       int x = q.dequeue();
+  //       temp.enqueue(x);
+  //       i++;
+  //     }
+
+  //     while (!temp.isEmpty()) {
+  //       q.enqueue(temp.dequeue());
+  //     }
+  //   }
 
   public static void moveHalf(Queue q) {
-        
-		Queue tmp = new Queue();
-		int half = size(q)/2;
-		
-		for(int i = 0 ; i < half ; i++) {
-		    tmp.enqueue(q.dequeue());
-		}
+    Queue tmp = new Queue();
+    int half = size(q) / 2;
 
-    	for(int i = 0 ; i < half ; i++) {
-		    q.enqueue(tmp.dequeue());
-		}
-	}
+    for (int i = 0; i < half; i++) {
+      tmp.enqueue(q.dequeue());
+    }
+
+    for (int i = 0; i < half; i++) {
+      q.enqueue(tmp.dequeue());
+    }
+  }
+
+  public static boolean checkPal1(Queue q1, int numOfEl) {
+    int tempVal = 0;
+
+    for (int i = 1; i <= (numOfEl - (numOfEl % 2)) / 2; i++) {
+      tempVal = q1.dequeue();
+
+      for (int j = 1; j <= (numOfEl - i * 2); j++) q1.enqueue(q1.dequeue());
+
+      if (tempVal != q1.dequeue()) return false;
+    }
+
+    return true;
+  }
 }
